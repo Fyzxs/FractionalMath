@@ -1,6 +1,6 @@
 ﻿using FluentAssertions;
 using FractionalMathLib.Lib;
-using FractionalMathLib.Lib.Text;
+using FractionalMathLib.Lib.Texts;
 using FractionalMathLib.Results;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -39,7 +39,7 @@ namespace FractionalMathLib.Tests
             Result firstOp = new NumberResult(arguments[0]);
             Result secondOp = new NumberResult(arguments[2]);
             AdditionOperationResult result = new AdditionOperationResult(firstOp, secondOp);
-            ResultToString almostOutput = new ResultToString(result);
+            MixedNumberResult almostOutput = new MixedNumberResult(result);
 
             return almostOutput;
         }
