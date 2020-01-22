@@ -1,7 +1,9 @@
-﻿using FractionalMathLib.Results;
+﻿using System;
+using FractionalMathLib.Results;
 using FractionalMathLib.ToRefactor;
 
-namespace FractionalMathLib.Lib.Texts {
+namespace FractionalMathLib.Lib.Texts
+{
     public sealed class FractionMixedNumberTextResult : TextResult
     {
         private readonly Result _origin;
@@ -10,12 +12,10 @@ namespace FractionalMathLib.Lib.Texts {
 
         public override string AsSystemType()
         {
-            //TODO: Still a lot of imperative code. Mostly numeric. Can 'Numbers' be created? Should they?
+            //Not 100% happy with this. I don't need "number" objects yet, though "Result" kinda is.
             double sourceValue = _origin.AsSystemType();
-            int truncated = (int)sourceValue;
-            double toFraction = sourceValue - truncated;
-            string fractionString = Fractions.RealToFraction(toFraction).ToString();
-            return fractionString;
+            double toFraction = sourceValue - Math.Truncate(sourceValue);
+            return Fractions.RealToFraction(toFraction).ToString();
         }
     }
 }
