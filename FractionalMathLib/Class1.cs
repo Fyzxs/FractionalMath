@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace FractionalMathLib
+﻿namespace FractionalMathLib
 {
     public class Class1
     {
