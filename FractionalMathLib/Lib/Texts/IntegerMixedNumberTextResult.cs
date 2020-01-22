@@ -12,7 +12,7 @@ namespace FractionalMathLib.Lib.Texts {
         public override string AsSystemType()
         {
             int truncated = (int)_origin.AsSystemType();
-            return 0 < truncated ? truncated + IntegerSeparator : NoInteger;
+            return 0 == truncated ? NoInteger : truncated + IntegerSeparator;
         }
     }
 }

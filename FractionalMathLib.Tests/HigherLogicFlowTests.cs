@@ -1,4 +1,6 @@
-﻿using FluentAssertions;
+﻿using System;
+using FluentAssertions;
+using FractionalMathLib.Exceptions;
 using FractionalMathLib.Lib;
 using FractionalMathLib.Lib.Texts;
 using FractionalMathLib.Results;
@@ -30,6 +32,36 @@ namespace FractionalMathLib.Tests
             actual.Should().Be("3_1/4");
         }
 
+        [TestMethod]
+        public void NegativeNineThirdPlusNegativeOneFourthShouldBeTwentyFiveTwelfthExceptAsThreeAndOneFourth()
+        {
+            string actual = DoEverything("-9/3 + -1/4");
+            actual.Should().Be("-3_1/4");
+        }
+
+        [TestMethod]
+        public void OneFourthPlusNegativeNineThirdShouldBeNegativeTwoAndThreeFourths()
+        {
+            string actual = DoEverything("1/4 + -9/3");
+            actual.Should().Be("-2_3/4");
+        }
+
+        [TestMethod]
+        public void OneFourthSubtractNineThirdShouldBeNegativeTwoAndThreeFourths()
+        {
+            string actual = DoEverything("1/4 - 9/3");
+            actual.Should().Be("-2_3/4");
+        }
+
+        [TestMethod]
+        public void UnknownOperationThrowsException()
+        {
+            Action action = () => DoEverything("1/4 # 9/3");
+
+            action.Should().ThrowExactly<UnknownOperationException>().WithMessage("Unknown Operation Requested [opCode=#]");
+
+        }
+
 
 
         private ToSystemType<string> DoEverything(string input)
@@ -38,10 +70,27 @@ namespace FractionalMathLib.Tests
 
             Result firstOp = new NumberResult(arguments[0]);
             Result secondOp = new NumberResult(arguments[2]);
-            AdditionOperationResult result = new AdditionOperationResult(firstOp, secondOp);
-            MixedNumberResult almostOutput = new MixedNumberResult(result);
+            OpCode opCode = new OpCode(arguments[1]);
+            Result opResult = opCode.Operation(firstOp, secondOp);
+
+            MixedNumberResult almostOutput = new MixedNumberResult(opResult);
 
             return almostOutput;
+        }
+    }
+
+    public sealed class OpCode
+    {
+        private readonly string _origin;
+
+        public OpCode(string origin) => _origin = origin;
+
+        public Result Operation(Result lhs, Result rhs)
+        {
+            if (_origin == "+") return new AdditionOperationResult(lhs, rhs);
+            if (_origin == "-") return new AdditionOperationResult(lhs, rhs.Negate());
+
+            throw new UnknownOperationException(_origin);
         }
     }
 }

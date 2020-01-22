@@ -13,9 +13,12 @@ namespace FractionalMathLib.Lib.Texts
         public override string AsSystemType()
         {
             //Not 100% happy with this. I don't need "number" objects yet, though "Result" kinda is.
-            double sourceValue = _origin.AsSystemType();
-            double toFraction = sourceValue - Math.Truncate(sourceValue);
+
+            double toFraction = DecimalComponent(_origin.AsSystemType());
+            
             return Fractions.RealToFraction(toFraction).ToString();
         }
+
+        private static double DecimalComponent(double sourceValue) => Math.Abs(sourceValue - Math.Truncate(sourceValue));
     }
 }
