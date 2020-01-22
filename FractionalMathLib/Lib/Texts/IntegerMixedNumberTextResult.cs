@@ -3,7 +3,6 @@
 namespace FractionalMathLib.Lib.Texts {
     public sealed class IntegerMixedNumberTextResult : TextResult
     {
-        private const string IntegerSeparator = "_";
         private const string NoInteger = "";
 
         private readonly Result _origin;
@@ -12,7 +11,9 @@ namespace FractionalMathLib.Lib.Texts {
         public override string AsSystemType()
         {
             int truncated = (int)_origin.AsSystemType();
-            return 0 == truncated ? NoInteger : truncated + IntegerSeparator;
+            return NoIntValue(truncated) ? NoInteger : truncated.ToString();
         }
+
+        private static bool NoIntValue(int truncated) => 0 == truncated;
     }
 }

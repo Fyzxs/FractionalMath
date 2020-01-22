@@ -54,6 +54,19 @@ namespace FractionalMathLib.Tests
         }
 
         [TestMethod]
+        public void TwoPlusFourShouldBeSix()
+        {
+            string actual = DoEverything("2 + 4");
+            actual.Should().Be("6");
+        }
+        [TestMethod]
+        public void TwoMinusFourShouldBeMinus2()
+        {
+            string actual = DoEverything("2 - 4");
+            actual.Should().Be("-2");
+        }
+
+        [TestMethod]
         public void HandlesManySpacesOneFourthSubtractNineThirdShouldBeNegativeTwoAndThreeFourths()
         {
             string actual = DoEverything("          1/4      -      9/3    ");
@@ -66,6 +79,7 @@ namespace FractionalMathLib.Tests
             Action action = () => DoEverything("1/4 # 9/3");
 
             action.Should().ThrowExactly<UnknownOperationException>().WithMessage("Unknown Operation Requested [opCode=#]");
+
         }
 
 

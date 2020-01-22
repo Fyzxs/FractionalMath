@@ -8,6 +8,8 @@
 
         private double GetFractionAsDouble()
         {
+            if (!_origin.Contains(FractionSeparator.ToString())) return double.Parse(_origin);
+
             string[] firstFraction = _origin.Split(FractionSeparator);
             return double.Parse(firstFraction[0]) / double.Parse(firstFraction[1]);
         }
