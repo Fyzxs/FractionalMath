@@ -79,7 +79,6 @@ namespace FractionalMathLib.Tests
             Action action = () => DoEverything("1/4 # 9/3");
 
             action.Should().ThrowExactly<UnknownOperationException>().WithMessage("Unknown Operation Requested [opCode=#]");
-
         }
 
 
