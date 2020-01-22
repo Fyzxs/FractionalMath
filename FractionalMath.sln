@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29403.142
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractionalMath", "FractionalMath.csproj", "{6EF35EB6-F3D9-4271-8035-5C2245DDC8B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractionalMathLib", "..\FractionalMathLib\FractionalMathLib.csproj", "{39DE3217-230E-4DFD-BBA8-161F0ECE570E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractionalMathLib.Tests", "..\FractionalMathLib.Tests\FractionalMathLib.Tests.csproj", "{449169C9-0558-4535-BBB0-61BEE3D177DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6EF35EB6-F3D9-4271-8035-5C2245DDC8B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EF35EB6-F3D9-4271-8035-5C2245DDC8B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EF35EB6-F3D9-4271-8035-5C2245DDC8B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EF35EB6-F3D9-4271-8035-5C2245DDC8B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39DE3217-230E-4DFD-BBA8-161F0ECE570E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39DE3217-230E-4DFD-BBA8-161F0ECE570E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39DE3217-230E-4DFD-BBA8-161F0ECE570E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39DE3217-230E-4DFD-BBA8-161F0ECE570E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{449169C9-0558-4535-BBB0-61BEE3D177DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{449169C9-0558-4535-BBB0-61BEE3D177DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{449169C9-0558-4535-BBB0-61BEE3D177DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{449169C9-0558-4535-BBB0-61BEE3D177DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C80478F4-ADA2-406D-951A-E2AF5F391A47}
+	EndGlobalSection
+EndGlobal
