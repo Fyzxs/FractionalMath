@@ -5,6 +5,8 @@ namespace FractionalMathLib.Lib.Texts {
     {
         private const string NoSeparator = "";
         private const string SeparatorGlyph = "_";
+        private const string ZeroResult = "0";
+
         private readonly TextResult _integer;
         private readonly TextResult _fraction;
 
@@ -16,7 +18,9 @@ namespace FractionalMathLib.Lib.Texts {
             _fraction = fraction;
         }
 
-        public override string AsSystemType() => $"{_integer.AsSystemType()}{Separator()}{_fraction.AsSystemType()}";
+        public override string AsSystemType() => NoValues() ? ZeroResult : $"{_integer.AsSystemType()}{Separator()}{_fraction.AsSystemType()}";
+
+        private bool NoValues() => 0 == _integer.AsSystemType().Length && 0 == _fraction.AsSystemType().Length;
 
         private string Separator() => OneOfTheTwoHaveNoValue() ? NoSeparator : SeparatorGlyph;
 

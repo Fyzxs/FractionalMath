@@ -67,6 +67,13 @@ namespace FractionalMathLib.Tests
         }
 
         [TestMethod]
+        public void ZeroShouldWork()
+        {
+            string actual = DoEverything("2 - 2");
+            actual.Should().Be("0");
+        }
+
+        [TestMethod]
         public void HandlesManySpacesOneFourthSubtractNineThirdShouldBeNegativeTwoAndThreeFourths()
         {
             string actual = DoEverything("          1/4      -      9/3    ");
