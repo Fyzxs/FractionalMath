@@ -1,13 +1,12 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace FractionalMathLib.Tests
 {
     [TestClass]
-    public class UnitTest1
+    public class TestFile
     {
-        [TestMethod]
-        public void TestMethod1()
-        {
-        }
     }
 }
