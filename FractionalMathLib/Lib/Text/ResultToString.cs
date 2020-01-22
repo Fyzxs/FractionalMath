@@ -8,6 +8,16 @@ namespace FractionalMathLib.Lib.Text {
 
         public ResultToString(Result origin) => _origin = origin;
 
-        public override string AsSystemType() => Fractions.RealToFraction(_origin.AsSystemType()).ToString();
+        public override string AsSystemType()
+        {
+            //TODO: Refactor this imperative mess
+            double sourceValue = _origin.AsSystemType();
+            int truncated = (int)sourceValue;
+            double toFraction = sourceValue - truncated;
+            string integerString = 0 < truncated ? truncated + "_" : "";
+            string fractionString = Fractions.RealToFraction(toFraction).ToString();
+
+            return $"{integerString}{fractionString}";
+        }
     }
 }

@@ -23,6 +23,13 @@ namespace FractionalMathLib.Tests
             actual.Should().Be("7/12");
         }
 
+        [TestMethod]
+        public void NineThirdPlusOneFourthShouldBeTwentyFiveTwelfthExceptAsThreeAndOneFourth()
+        {
+            string actual = DoEverything("9/3 + 1/4");
+            actual.Should().Be("3_1/4");
+        }
+
 
 
         private ToSystemType<string> DoEverything(string input)
