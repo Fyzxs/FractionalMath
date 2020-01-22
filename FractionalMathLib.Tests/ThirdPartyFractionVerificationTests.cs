@@ -13,7 +13,7 @@ namespace FractionalMathLib.Tests
             double n = 1;
             double d = 3;
             double dbl = n/d;
-            Fraction actual = RealToFraction(dbl);
+            Fractions.Fraction actual = Fractions.RealToFraction(dbl);
 
             actual.N.Should().Be((int)n);
             actual.D.Should().Be((int)d);
@@ -22,15 +22,19 @@ namespace FractionalMathLib.Tests
         [TestMethod]
         public void VerifyIrrationalGetsRightResult()
         {
-            Fraction actual = RealToFraction(3.14159);
+            Fractions.Fraction actual = Fractions.RealToFraction(3.14159);
 
             actual.N.Should().Be((int)238_010);
             actual.D.Should().Be((int)75_761);
         }
+    }
 
+    public static class Fractions
+    {
         /* The below algorithm is puiled from
          https://stackoverflow.com/a/32903747
          */
+
         public struct Fraction
         {
             public Fraction(int n, int d)
@@ -41,9 +45,11 @@ namespace FractionalMathLib.Tests
 
             public int N { get; private set; }
             public int D { get; private set; }
+
+            public override string ToString() => $"{N}/{D}";
         }
 
-        public Fraction RealToFraction(double value, double accuracy = 1e-10)
+        public static Fraction RealToFraction(double value, double accuracy = 1e-10)
         {
             if (accuracy <= 0.0 || accuracy >= 1.0)
             {
@@ -107,7 +113,7 @@ namespace FractionalMathLib.Tests
         /// <summary>
         /// Binary seek for the value where f() becomes false.
         /// </summary>
-        void Seek(ref int a, ref int b, int ainc, int binc, Func<int, int, bool> f)
+        private static void Seek(ref int a, ref int b, int ainc, int binc, Func<int, int, bool> f)
         {
             a += ainc;
             b += binc;
