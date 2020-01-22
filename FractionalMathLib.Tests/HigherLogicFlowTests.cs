@@ -54,19 +54,25 @@ namespace FractionalMathLib.Tests
         }
 
         [TestMethod]
+        public void HandlesManySpacesOneFourthSubtractNineThirdShouldBeNegativeTwoAndThreeFourths()
+        {
+            string actual = DoEverything("          1/4      -      9/3    ");
+            actual.Should().Be("-2_3/4");
+        }
+
+        [TestMethod]
         public void UnknownOperationThrowsException()
         {
             Action action = () => DoEverything("1/4 # 9/3");
 
             action.Should().ThrowExactly<UnknownOperationException>().WithMessage("Unknown Operation Requested [opCode=#]");
-
         }
 
 
 
         private ToSystemType<string> DoEverything(string input)
         {
-            string[] arguments = input.Split(" ");
+            string[] arguments = input.Split(" ", StringSplitOptions.RemoveEmptyEntries);
 
             Result firstOp = new NumberResult(arguments[0]);
             Result secondOp = new NumberResult(arguments[2]);
