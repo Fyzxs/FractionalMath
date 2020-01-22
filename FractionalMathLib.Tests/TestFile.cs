@@ -15,6 +15,12 @@ namespace FractionalMathLib.Tests
             string actual = DoEverything("1/3 + 1/4");
             actual.Should().Be("7/12");
         }
+        [TestMethod]
+        public void OneThirdPlusOneFourthShouldBeSevenTwelfthEvenIfReversed()
+        {
+            string actual = DoEverything("1/4 + 1/3");
+            actual.Should().Be("7/12");
+        }
 
         private string DoEverything(string input)
         {
@@ -27,8 +33,6 @@ namespace FractionalMathLib.Tests
             Fractions.Fraction realToFraction = Fractions.RealToFraction(result);
 
             return realToFraction.ToString();
-
-
         }
 
         private static double GetFractionAsDouble(string strOperand)
