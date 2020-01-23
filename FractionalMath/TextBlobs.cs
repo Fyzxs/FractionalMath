@@ -10,15 +10,28 @@ namespace FractionalMath
 
     internal sealed class TextBlobs : ITextBlobs
     {
+        private const int InputStart = 9;
+        private const int ScreenTop = 0;
+
         public void Instructions()
         {
             int prevPos = Console.CursorTop;
-            int newPos = Console.CursorTop - Console.WindowHeight + 1;
-            Console.CursorTop = newPos < 0 ? 0 : newPos;
+            Console.CursorTop = InstructionsPosition();
             InstructionsBlob();
-            Console.CursorTop = prevPos < 9 ? 9 : prevPos ;
-
+            Console.CursorTop = InputPosition(prevPos);
         }
+
+        private static int InstructionsPosition()
+        {
+            int newPos = Console.CursorTop - Console.WindowHeight + 1;
+            return newPos < ScreenTop ? ScreenTop : newPos;
+        }
+
+        private static int InputPosition(int prevPos)
+        {
+            return prevPos < InputStart ? InputStart : prevPos;
+        }
+
         private static void InstructionsBlob()
         {
             Console.WriteLine("Welcome to \"Fractional Math\"!".PadRight(Console.WindowWidth));
