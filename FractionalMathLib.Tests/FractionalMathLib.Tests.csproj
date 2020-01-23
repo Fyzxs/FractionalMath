@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FractionalMathLib\FractionalMathLib.csproj" />
+    <ProjectReference Include="..\FractionalMath\FractionalMath.csproj" />
   </ItemGroup>
 
 </Project>

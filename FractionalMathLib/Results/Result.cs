@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using FractionalMathLib.Lib;
+﻿using FractionalMathLib.Lib;
 
 namespace FractionalMathLib.Results {
     public abstract class Result : ToSystemType<double>
