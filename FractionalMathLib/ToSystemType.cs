@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 
-namespace FractionalMathLib {
+namespace FractionalMathLib
+{
 
     /// <summary>
     /// This class allows automatic conversion to system/primitive types at the edge of our system.

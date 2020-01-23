@@ -1,4 +1,5 @@
-﻿namespace FractionalMathLib.Results.Doubles {
+﻿namespace FractionalMathLib.Results.Doubles
+{
     /// <summary>
     /// A Marker Class for Results. This is the base class for a numeric result.
     ///
@@ -6,5 +7,5 @@
     ///
     /// Primitives are not allowed. Result represents the concept in the code. A double is... meaningless.
     /// </summary>
-    internal abstract class Result : ToSystemType<double>{}
+    internal abstract class Result : ToSystemType<double> { }
 }
