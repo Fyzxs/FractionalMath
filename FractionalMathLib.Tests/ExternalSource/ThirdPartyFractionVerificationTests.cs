@@ -1,5 +1,5 @@
 using FluentAssertions;
-using FractionalMathLib.ToRefactor;
+using FractionalMathLib.ExternalSource;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace FractionalMathLib.Tests

@@ -7,7 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace FractionalMathLib.Tests
 {
     [TestClass]
-    public class HigherLogicFlowTests
+    public class EndToEndTests
     {
         [TestMethod]
         public void OneThirdPlusOneFourthShouldBeSevenTwelfth()
@@ -81,6 +81,13 @@ namespace FractionalMathLib.Tests
         {
             string actual = FractionalMathProgram.ProcessInput("2 - 2");
             actual.Should().Be("0");
+        }
+
+        [TestMethod]
+        public void TwoDividedByFourShouldBeHalf()
+        {
+            string actual = FractionalMathProgram.ProcessInput("2 / 4");
+            actual.Should().Be("1/2");
         }
 
         [TestMethod]

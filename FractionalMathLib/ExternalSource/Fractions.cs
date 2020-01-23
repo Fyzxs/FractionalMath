@@ -1,9 +1,9 @@
 using System;
 
 namespace FractionalMathLib.ExternalSource {
-    public static class Fractions
+    internal static class Fractions
     {
-        /* The below algorithm is puiled from
+        /* The below algorithm is pulled from
          https://stackoverflow.com/a/32903747
          */
 
