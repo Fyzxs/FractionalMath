@@ -104,19 +104,5 @@ namespace FractionalMathLib.Tests
 
             action.Should().ThrowExactly<UnknownOperationException>().WithMessage("Unknown Operation Requested [opCode=#]");
         }
-        [TestMethod]
-        public void NoOperationThrowsException()
-        {
-            Action action = () => FractionalMathProgram.ProcessInput("1/4 9/3 9/3 9/3");
-
-            action.Should().ThrowExactly<InvalidArgumentsException>().WithMessage("Invalid request. Not enough parts. [Expected=3] [Found=4]");
-        }
-        [TestMethod]
-        public void SingleOperandThrowsException()
-        {
-            Action action = () => FractionalMathProgram.ProcessInput("1/4");
-
-            action.Should().ThrowExactly<InvalidArgumentsException>().WithMessage("Invalid request. Not enough parts. [Expected=3] [Found=1]");
-        }
     }
 }
