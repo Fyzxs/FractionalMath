@@ -1,4 +1,4 @@
-﻿namespace FractionalMathLib.Results
+﻿namespace FractionalMathLib.Results.Doubles
 {
     public sealed class SubtractionOperationResult : Result
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using FractionalMathLib.OpCodes;
 
-namespace FractionalMathLib.Results
+namespace FractionalMathLib.Results.Doubles
 {
     public sealed class OperationResult : Result
     {
@@ -10,7 +10,7 @@ namespace FractionalMathLib.Results
         private readonly OperationFactory _operationFactory;
 
         public OperationResult(IReadOnlyList<string> arguments) 
-            : this((Result)new MixedNumberInputResult(arguments[0]), (Result)new MixedNumberInputResult(arguments[2]), new OperationFactory(arguments[1])){ }
+            : this(new MixedNumberInputResult(arguments[0]), new MixedNumberInputResult(arguments[2]), new OperationFactory(arguments[1])){ }
 
         private OperationResult(Result lhs, Result rhs, OperationFactory operationFactory)
         {

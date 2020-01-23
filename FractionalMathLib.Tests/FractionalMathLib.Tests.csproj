@@ -19,4 +19,8 @@
     <ProjectReference Include="..\FractionalMath\FractionalMath.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Lib\Texts\" />
+  </ItemGroup>
+
 </Project>

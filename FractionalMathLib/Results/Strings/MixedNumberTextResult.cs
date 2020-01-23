@@ -1,7 +1,7 @@
-﻿using FractionalMathLib.Results;
+﻿using FractionalMathLib.Results.Doubles;
 
-namespace FractionalMathLib.Lib.Texts {
-    public sealed class MixedNumberResult: TextResult
+namespace FractionalMathLib.Results.Strings {
+    public sealed class MixedNumberTextResult: TextResult
     {
         private const string NoSeparator = "";
         private const string SeparatorGlyph = "_";
@@ -10,9 +10,9 @@ namespace FractionalMathLib.Lib.Texts {
         private readonly TextResult _integer;
         private readonly TextResult _fraction;
 
-        public MixedNumberResult(Result origin):this(new IntegerMixedNumberTextResult(origin), new FractionMixedNumberTextResult(origin)) { }
+        public MixedNumberTextResult(Result origin):this(new IntegerMixedNumberTextResult(origin), new FractionMixedNumberTextResult(origin)) { }
 
-        private MixedNumberResult(TextResult integer, TextResult fraction)
+        private MixedNumberTextResult(TextResult integer, TextResult fraction)
         {
             _integer = integer;
             _fraction = fraction;

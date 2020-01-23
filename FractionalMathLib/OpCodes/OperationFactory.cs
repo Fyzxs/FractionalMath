@@ -1,5 +1,6 @@
 ﻿using FractionalMathLib.Exceptions;
 using FractionalMathLib.Results;
+using FractionalMathLib.Results.Doubles;
 
 namespace FractionalMathLib.OpCodes
 {

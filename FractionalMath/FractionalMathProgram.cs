@@ -1,8 +1,8 @@
 ﻿using System;
 using FractionalMathLib.Exceptions;
-using FractionalMathLib.Lib;
-using FractionalMathLib.Lib.Texts;
 using FractionalMathLib.Results;
+using FractionalMathLib.Results.Doubles;
+using FractionalMathLib.Results.Strings;
 
 namespace FractionalMath
 {
@@ -57,7 +57,7 @@ namespace FractionalMath
 
             if (arguments.Length != 3) throw new InvalidArgumentsException(arguments.Length);
 
-            return new MixedNumberResult(new OperationResult(arguments));
+            return new MixedNumberTextResult(new OperationResult(arguments));
         }
 
         private static string WaitForInput()

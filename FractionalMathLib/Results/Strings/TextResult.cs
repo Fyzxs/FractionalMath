@@ -1,3 +1,3 @@
-﻿namespace FractionalMathLib.Lib.Texts {
+﻿namespace FractionalMathLib.Results.Strings {
     public abstract class TextResult: ToSystemType<string> { }
 }

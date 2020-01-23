@@ -3,6 +3,7 @@ using FluentAssertions;
 using FractionalMathLib.Exceptions;
 using FractionalMathLib.OpCodes;
 using FractionalMathLib.Results;
+using FractionalMathLib.Results.Doubles;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace FractionalMathLib.Tests.Exceptions

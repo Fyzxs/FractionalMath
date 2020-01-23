@@ -1,6 +1,6 @@
-﻿using FractionalMathLib.Results;
+﻿using FractionalMathLib.Results.Doubles;
 
-namespace FractionalMathLib.Lib.Texts {
+namespace FractionalMathLib.Results.Strings {
     public sealed class IntegerMixedNumberTextResult : TextResult
     {
         private const string NoInteger = "";

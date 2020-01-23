@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace FractionalMathLib.Lib {
+namespace FractionalMathLib {
 
     [DebuggerDisplay("{AsSystemType()}")]
     public abstract class ToSystemType<T>
