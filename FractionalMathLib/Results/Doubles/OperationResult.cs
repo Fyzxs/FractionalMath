@@ -8,7 +8,9 @@ namespace FractionalMathLib.Results.Doubles
     /// </summary>
     internal sealed class OperationResult : Result
     {
-        //Note: If the index values of LHS and Operand were swapped, this system would do reverse polish notation.
+        //Note: Swapping the index values of LHS and Operand, this would do polish notation.
+        //Note: Swapping the index values of RHS and Operand, this would do reverse polish notion.
+        //Note: I could "EXTRACT WHAT VARIES" and make all three super simple to have as options.
         private const int LeftHandSideOperandIndex = 0;
         private const int RightHandSideOperandIndex = 2;
         private const int OperandIndex = 1;
