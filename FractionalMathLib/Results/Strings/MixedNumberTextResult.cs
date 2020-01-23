@@ -1,6 +1,10 @@
 ﻿using FractionalMathLib.Results.Doubles;
 
-namespace FractionalMathLib.Results.Strings {
+namespace FractionalMathLib.Results.Strings 
+{
+    /// <summary>
+    /// Represents the correct construction of the expected output for a Mixed Fraction.
+    /// </summary>
     public sealed class MixedNumberTextResult: TextResult
     {
         private const string NoSeparator = "";

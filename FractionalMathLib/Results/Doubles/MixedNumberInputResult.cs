@@ -1,6 +1,10 @@
 ﻿using System.Linq;
 
-namespace FractionalMathLib.Results.Doubles {
+namespace FractionalMathLib.Results.Doubles
+{
+    /// <summary>
+    /// Encapsulates the computation of the mixed number input
+    /// </summary>
     internal sealed class MixedNumberInputResult : Result 
     { 
         //Note: This class feels busy. Tried to refactor a few times, it has high cohesion

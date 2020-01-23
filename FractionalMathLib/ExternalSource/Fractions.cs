@@ -1,10 +1,16 @@
 using System;
 
 namespace FractionalMathLib.ExternalSource {
+    /// <summary>
+    /// Container for RealToFraction functionality. It's 3rd party, not making it into heavy OO.
+    /// </summary>
     internal static class Fractions
     {
-        /* The below algorithm is pulled from
-         https://stackoverflow.com/a/32903747
+        /* The below algorithm is pulled from https://stackoverflow.com/a/32903747
+
+            Created a default accuracy value.
+            
+            Pretty much a C&P from StackOverflow.
          */
 
         public struct Fraction
@@ -15,8 +21,8 @@ namespace FractionalMathLib.ExternalSource {
                 D = d;
             }
 
-            public int N { get; private set; }
-            public int D { get; private set; }
+            public int N { get; }
+            public int D { get; }
 
             public override string ToString() => $"{N}/{D}";
         }

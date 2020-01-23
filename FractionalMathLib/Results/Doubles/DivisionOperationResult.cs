@@ -1,5 +1,8 @@
 ﻿namespace FractionalMathLib.Results.Doubles
 {
+    /// <summary>
+    /// Encapsulates the division of multiple results
+    /// </summary>
     internal sealed class DivisionOperationResult : Result
     {
         private readonly Result _lhs;

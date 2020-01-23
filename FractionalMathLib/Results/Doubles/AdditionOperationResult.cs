@@ -1,4 +1,8 @@
-﻿namespace FractionalMathLib.Results.Doubles {
+﻿namespace FractionalMathLib.Results.Doubles 
+{
+    /// <summary>
+    /// Encapsulates the addition of multiple results
+    /// </summary>
     internal sealed class AdditionOperationResult : Result
     {
         private readonly Result _lhs;

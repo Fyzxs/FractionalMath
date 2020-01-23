@@ -1,6 +1,10 @@
 ﻿using FractionalMathLib.Results.Doubles;
 
-namespace FractionalMathLib.Results.Strings {
+namespace FractionalMathLib.Results.Strings
+{
+    /// <summary>
+    /// Represents the conversion of the whole part of a double into a textual representation when appropriate.
+    /// </summary>
     internal sealed class IntegerMixedNumberTextResult : TextResult
     {
         private const string NoInteger = "";

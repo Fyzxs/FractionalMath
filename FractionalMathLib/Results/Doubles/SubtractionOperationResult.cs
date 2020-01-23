@@ -1,5 +1,8 @@
 ﻿namespace FractionalMathLib.Results.Doubles
 {
+    /// <summary>
+    /// Encapsulates the subtraction of multiple results
+    /// </summary>
     internal sealed class SubtractionOperationResult : Result
     {
         private readonly Result _lhs;

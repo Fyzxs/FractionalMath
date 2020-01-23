@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using FractionalMathLib.Exceptions;
 using FractionalMathLib.Results.Doubles;
 using FractionalMathLib.Results.Strings;
@@ -54,10 +55,12 @@ namespace FractionalMath
         {
             string[] arguments = input.Split(" ", StringSplitOptions.RemoveEmptyEntries);
 
-            if (arguments.Length != 3) throw new InvalidArgumentsException(arguments.Length);
+            if (ValidateArgumentCount(arguments)) return $"Invalid request. Not enough parts. [Expected=3] [Found={arguments.Length}]";
 
             return new MixedNumberTextResult(new OperationResult(arguments));
         }
+
+        private static bool ValidateArgumentCount(IReadOnlyCollection<string> arguments) => arguments.Count != 3;
 
         private static string WaitForInput()
         {

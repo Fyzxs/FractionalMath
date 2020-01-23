@@ -4,6 +4,9 @@ using FractionalMathLib.Results.Doubles;
 
 namespace FractionalMathLib.Results.Strings
 {
+    /// <summary>
+    /// Represents the conversion of the decimal part of a double into a textual fraction representation when appropriate.
+    /// </summary>
     internal sealed class FractionMixedNumberTextResult : TextResult
     {
         private const double Tolerance = .00001;
