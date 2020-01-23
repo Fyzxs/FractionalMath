@@ -2,7 +2,7 @@
 
 namespace FractionalMathLib.Exceptions
 {
-    public sealed class UnknownOperationException : Exception
+    internal sealed class UnknownOperationException : Exception
     {
         private readonly string _opCode;
 

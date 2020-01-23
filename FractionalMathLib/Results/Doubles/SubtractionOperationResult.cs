@@ -1,6 +1,6 @@
 ﻿namespace FractionalMathLib.Results.Doubles
 {
-    public sealed class SubtractionOperationResult : Result
+    internal sealed class SubtractionOperationResult : Result
     {
         private readonly Result _lhs;
         private readonly Result _rhs;

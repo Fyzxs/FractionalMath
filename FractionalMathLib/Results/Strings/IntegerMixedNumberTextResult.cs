@@ -1,7 +1,7 @@
 ﻿using FractionalMathLib.Results.Doubles;
 
 namespace FractionalMathLib.Results.Strings {
-    public sealed class IntegerMixedNumberTextResult : TextResult
+    internal sealed class IntegerMixedNumberTextResult : TextResult
     {
         private const string NoInteger = "";
 

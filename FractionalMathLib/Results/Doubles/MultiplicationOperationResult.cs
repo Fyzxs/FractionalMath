@@ -1,6 +1,6 @@
 ﻿namespace FractionalMathLib.Results.Doubles
 {
-    public sealed class MultiplicationOperationResult : Result
+    internal sealed class MultiplicationOperationResult : Result
     {
         private readonly Result _lhs;
         private readonly Result _rhs;

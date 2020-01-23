@@ -1,5 +1,5 @@
 ﻿namespace FractionalMathLib.Results.Doubles {
-    public sealed class AdditionOperationResult : Result
+    internal sealed class AdditionOperationResult : Result
     {
         private readonly Result _lhs;
         private readonly Result _rhs;

@@ -4,7 +4,7 @@ using FractionalMathLib.Results.Doubles;
 
 namespace FractionalMathLib.Results.Strings
 {
-    public sealed class FractionMixedNumberTextResult : TextResult
+    internal sealed class FractionMixedNumberTextResult : TextResult
     {
         private const double Tolerance = .00001;
         private const string NoFraction = "";

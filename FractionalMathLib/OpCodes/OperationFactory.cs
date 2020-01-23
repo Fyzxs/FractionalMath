@@ -1,10 +1,9 @@
 ﻿using FractionalMathLib.Exceptions;
-using FractionalMathLib.Results;
 using FractionalMathLib.Results.Doubles;
 
 namespace FractionalMathLib.OpCodes
 {
-    public sealed class OperationFactory
+    internal sealed class OperationFactory
     {
         private readonly string _origin;
 

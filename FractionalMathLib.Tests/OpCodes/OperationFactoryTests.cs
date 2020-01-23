@@ -2,8 +2,8 @@ using System;
 using FluentAssertions;
 using FractionalMathLib.Exceptions;
 using FractionalMathLib.OpCodes;
-using FractionalMathLib.Results;
 using FractionalMathLib.Results.Doubles;
+using FractionalMathLib.Tests.Fakes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace FractionalMathLib.Tests.Exceptions
@@ -73,16 +73,6 @@ namespace FractionalMathLib.Tests.Exceptions
 
             //Assert
             action.Should().ThrowExactly<UnknownOperationException>();
-        }
-
-        private sealed class FakeResult :Result
-        {
-            private readonly double _value;
-
-            public FakeResult() : this(0) { }
-            private FakeResult(double value) => _value = value;
-
-            public override double AsSystemType() => _value;
         }
     }
 }

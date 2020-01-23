@@ -1,6 +1,5 @@
 ﻿using System;
 using FractionalMathLib.Exceptions;
-using FractionalMathLib.Results;
 using FractionalMathLib.Results.Doubles;
 using FractionalMathLib.Results.Strings;
 

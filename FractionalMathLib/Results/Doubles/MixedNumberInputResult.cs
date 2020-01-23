@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 
 namespace FractionalMathLib.Results.Doubles {
-    public sealed class MixedNumberInputResult : Result 
+    internal sealed class MixedNumberInputResult : Result 
     { 
         //Note: This class feels busy. Tried to refactor a few times, it has high cohesion
 
