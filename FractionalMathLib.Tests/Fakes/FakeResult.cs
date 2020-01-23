@@ -2,7 +2,7 @@ using FractionalMathLib.Results.Doubles;
 
 namespace FractionalMathLib.Tests.Fakes
 {
-    public sealed class FakeResult : Result
+    internal sealed class FakeResult : Result
     {
         private readonly double _value;
 

@@ -13,7 +13,7 @@ namespace FractionalMathLib {
     /// </summary>
     /// <typeparam name="T"></typeparam>
     [DebuggerDisplay("{AsSystemType()}")]
-    public abstract class ToSystemType<T>
+    internal abstract class ToSystemType<T>
     {
         /// <summary>
         /// The implicit operator to the generic type allows automatic conversion to system/primitive types at the edge of our system.

@@ -6,5 +6,5 @@
     ///
     /// Primitives are not allowed. Result represents the concept in the code. A double is... meaningless.
     /// </summary>
-    public abstract class Result : ToSystemType<double>{}
+    internal abstract class Result : ToSystemType<double>{}
 }

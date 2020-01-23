@@ -6,7 +6,7 @@ namespace FractionalMathLib.Results.Doubles
     /// <summary>
     /// Encapsulates the knowledge of how the input of operands and operations relate.
     /// </summary>
-    public sealed class OperationResult : Result
+    internal sealed class OperationResult : Result
     {
         //Note: If the index values of LHS and Operand were swapped, this system would do reverse polish notation.
         private const int LeftHandSideOperandIndex = 0;

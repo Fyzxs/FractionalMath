@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using FractionalMathLib.Exceptions;
-using FractionalMathLib.Results.Doubles;
-using FractionalMathLib.Results.Strings;
+using FractionalMathLib;
 
 namespace FractionalMath
 {
@@ -10,67 +7,61 @@ namespace FractionalMath
     {
         public static void Main(string[] args)
         {
-            Intro();
+            new RunMe().Run();
+        }
+    }
+
+    internal sealed class RunMe
+    {
+        private readonly IUserInteraction _ux;
+        private readonly ITextBlobs _textBlobs;
+        private readonly IProcessRequest _processRequest;
+
+        public RunMe():this(new UserInteraction(), new TextBlobs(), new ProcessRequest()) {}
+
+        private RunMe(IUserInteraction ux, ITextBlobs textBlobs, IProcessRequest processRequest)
+        {
+            _ux = ux;
+            _textBlobs = textBlobs;
+            _processRequest = processRequest;
+        }
+
+        public void Run()
+        {
+            _textBlobs.Instructions();
             string input;
-            while (!string.Equals((input = WaitForInput()), "q", StringComparison.Ordinal))
+            while ("q" != (input = _ux.WaitForInput()))
             {
                 try
                 {
-                    string answer = ProcessInput(input);
-                    DisplayResult(answer);
+                    _ux.DisplayResult(_processRequest.ProcessInput(input));
                 }
                 catch (Exception ex)
                 {
-                    DisplayError(ex);
+                    _ux.DisplayError(ex);
                 }
 
-                KeepIntroText();
+                _textBlobs.Instructions();
             }
-            Console.WriteLine("Thanks for coming!");
-            Console.WriteLine("Hit any key to exit");
-            Console.ReadKey();
+
+            _textBlobs.ExitMessage();
         }
 
-        private static void KeepIntroText()
+
+    }
+
+    internal sealed class TextBlobs : ITextBlobs
+    {
+        public void Instructions()
         {
             int prevPos = Console.CursorTop;
-            int newPos = Console.CursorTop - Console.WindowHeight+1;
+            int newPos = Console.CursorTop - Console.WindowHeight + 1;
             Console.CursorTop = newPos < 0 ? 0 : newPos;
-            Intro();
+            IntroBlob();
             Console.CursorTop = prevPos;
 
         }
-
-        private static void DisplayResult(string answer)
-        {
-            Console.WriteLine($"= {answer}");
-        }
-
-        private static void DisplayError(Exception ex)
-        {
-            Console.WriteLine($"Unable to Process. {ex.Message}");
-        }
-
-        public static string ProcessInput(string input)
-        {
-            string[] arguments = input.Split(" ", StringSplitOptions.RemoveEmptyEntries);
-
-            if (ValidateArgumentCount(arguments)) return $"Invalid request. Not enough parts. [Expected=3] [Found={arguments.Length}]";
-
-            return new MixedNumberTextResult(new OperationResult(arguments));
-        }
-
-        private static bool ValidateArgumentCount(IReadOnlyCollection<string> arguments) => arguments.Count != 3;
-
-        private static string WaitForInput()
-        {
-            InputPrompt();
-            return Console.ReadLine();
-        }
-
-        private static void InputPrompt() => Console.Write("? ");
-
-        private static void Intro()
+        private static void IntroBlob()
         {
             Console.WriteLine("Welcome to \"Fractional Math\"!".PadRight(Console.WindowWidth));
             Console.WriteLine("".PadRight(Console.WindowWidth));
@@ -82,5 +73,38 @@ namespace FractionalMath
             Console.WriteLine("To exit, please enter just the letter 'q'".PadRight(Console.WindowWidth));
             Console.WriteLine("".PadRight(Console.WindowWidth));
         }
+
+        public void ExitMessage()
+        {
+            Console.WriteLine("Thanks for coming!");
+            Console.WriteLine("Hit any key to exit");
+            Console.ReadKey();
+        }
+    }
+
+    internal interface ITextBlobs
+    {
+        void Instructions();
+        void ExitMessage();
+    }
+
+    internal sealed class UserInteraction : IUserInteraction
+    {
+        public string WaitForInput()
+        {
+            Console.Write("? ");
+            return Console.ReadLine();
+        }
+
+        public void DisplayResult(string answer) => Console.WriteLine($"= {answer}");
+
+        public void DisplayError(Exception ex) => Console.WriteLine($"Unable to Process. {ex.Message}");
+    }
+
+    internal interface IUserInteraction
+    {
+        string WaitForInput();
+        void DisplayResult(string answer);
+        void DisplayError(Exception ex);
     }
 }

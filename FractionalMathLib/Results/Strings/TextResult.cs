@@ -5,5 +5,5 @@
     ///
     /// Primitives are not allowed. Result represents the concept in the code. A string is... meaningless.
     /// </summary>
-    public abstract class TextResult: ToSystemType<string> { }
+    internal abstract class TextResult: ToSystemType<string> { }
 }
