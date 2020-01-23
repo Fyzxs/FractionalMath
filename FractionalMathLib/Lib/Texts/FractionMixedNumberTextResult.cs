@@ -1,6 +1,6 @@
 ﻿using System;
+using FractionalMathLib.ExternalSource;
 using FractionalMathLib.Results;
-using FractionalMathLib.ToRefactor;
 
 namespace FractionalMathLib.Lib.Texts
 {

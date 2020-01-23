@@ -1,6 +1,6 @@
 using System;
 
-namespace FractionalMathLib.ToRefactor {
+namespace FractionalMathLib.ExternalSource {
     public static class Fractions
     {
         /* The below algorithm is puiled from
